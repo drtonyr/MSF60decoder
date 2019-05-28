@@ -4,7 +4,7 @@ A software decoder for the 60kHz NPL time signal (aka MSF)
 
 The UK radio time signal is broadcast on 60kHz from Anthorn, Cumbria (see [Time From NLP (MSF)](https://en.wikipedia.org/wiki/Time_from_NPL_(MSF)))
 
-There are many ways to decode this signal, but all seem to involve significant hardware.  This project uses just a bit of wire into a soundcard and does all the hard work in software.   I'm about 250 miles away from the transmitter and I put about 4 meters of wire out of an upstairs window and attached it to a tree.
+There are many ways to decode this signal, but all seem to involve significant hardware.  This project uses just a bit of wire into a soundcard and does all the hard work in software.   I'm about 250 miles away from the transmitter and I put about 4 meters of wire out of an upstairs window and attached it to a tree.  Others suggest that a small loop antenna or a few turns around a ferrite rod would do the trick as well.
 
 A description of the signal processing and some pretty matplotlib.pyplot plots will go here soon...
 
