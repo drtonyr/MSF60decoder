@@ -24,4 +24,4 @@ A description of the signal processing and some pretty matplotlib.pyplot plots w
 
 * Do any existing recordings reach as far as 60kHz?  It would be fun if the time code could be pulled from old 8 track analog...
 
-* What is the furthest away the MSF-60 signal can be reliably decoded with (a) the standard release and (b) any mod you like?
+* What is the furthest away the MSF-60 signal can be reliably decoded with (a) the standard release or (b) any mod you like?
