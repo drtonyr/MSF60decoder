@@ -18,7 +18,7 @@ Low SNR decoding using minute repeats:  Almost the same signal is transmitted ev
 
 Better time resolution: Each on/off transition occurs on a 10ms boundary these can all be measured more accurately and aggregated for higher precisionn (e.g. after decoding search around the known carrier on/off points, compute a likelihood of carrier on and average modulo 10ms).
 
-Extend to decoding of the [https://en.wikipedia.org/wiki/DCF77](DCF77 signal from Mainflingen, Germany) and/or the [https://en.wikipedia.org/wiki/WWVB])WWVB signal from Fort Collins, Colorado, USA).
+Extend to decoding of the [https://en.wikipedia.org/wiki/DCF77](DCF77 signal from Mainflingen, Germany) and/or the [https://en.wikipedia.org/wiki/WWVB](WWVB signal from Fort Collins, Colorado, USA).
 
 Investigate antenna design.  With hardware some people like a horizontal wire perpendicular to the direction of the transmitter, some vertical, some loop antenna and some ferrite coil.   The code will give you a SNR figure so designs may be tried and optimised.
 
