@@ -1,4 +1,4 @@
-# timeFromNPL
+# MSF-60 decoder
 
 A software decoder for the 60kHz NPL time signal (aka MSF)
 
