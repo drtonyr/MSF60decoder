@@ -24,7 +24,7 @@ So what does the recorded waveform look like?  Here are the first few samples:
 
 ![waveform](https://github.com/drtonyr/MSF60decoder/raw/master/img/wave.png)
 
-Well, there's certaily something happening there.  The low frequnecy is almost certainly 50kHz mains noise, and there's a lot more happening at other frequencies. so let's look at the waveform in the frequency domain:
+Well, there's certaily something happening there.  The low frequnecy is almost certainly 50Hz mains noise, and there's a lot more happening at other frequencies. so let's look at the waveform in the frequency domain:
 
 ![FFT of waveform](https://github.com/drtonyr/MSF60decoder/raw/master/img/fft.png)
 
@@ -49,8 +49,6 @@ There's defintely some structure there, let's look at the first part:
 And there we have it, our time signal.  All we need to do now is work out where half way between the bottom floor and top ceiling is and we can thresold and get all the bits out.
 
 ## Extensions
-
-* Cope with ALSA overruns:  At the moment we just hope that they happen at the start of the file
 
 * Mearure the SNR more accurately:  At the moment approxSNR is reported prior to decoding the signal.  After decoding we know what all the bits are, so we can measure it exactly: SNR = 10 log10(meanPowerCarrierOn / meanPowerCarrierOff).
 
