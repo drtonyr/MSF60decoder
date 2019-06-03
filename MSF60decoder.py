@@ -13,6 +13,7 @@ import numpy as np
 import scipy.io.wavfile
 import scipy.signal
 import matplotlib.pyplot as plt
+## plt.figure(figsize=(10,3))
 
 # fundamental parameters
 symbolTime = 0.1  # this is the duration of a symbol (one bit) in seconds
@@ -70,7 +71,7 @@ cwindow = np.empty(windowLen)
 for i in range(windowLen):
   swindow[i] = window[i] * np.sin(rfreq * i)
   cwindow[i] = window[i] * np.cos(rfreq * i)
-## plt.plot(swindow)
+## plt.plot(swindow[0:64])
 
 # compute the demodulated waveform
 demod = []
