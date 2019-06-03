@@ -20,6 +20,34 @@ I have a [Intel DX58SO motherboard](https://ark.intel.com/content/www/us/en/ark/
 
 So how does MSF60decoder.py work?  Lines marked with ## can be uncommented to show the signal processing steps.  If you do this don't forget to add a 'plt.show()' line so that the plot is displayed.   The plots below come from the supplied test.wav file.
 
+So what does the recorded waveform look like?  Here are the first few samples:
+
+![waveform](https://github.com/drtonyr/MSF60decoder/raw/master/img/wave.png)
+
+Well, there's certaily something happening there.  The low frequnecy is almost certainly 50kHz mains noise, and there's a lot more happening at other frequencies. so let's look at the waveform in the frequency domain:
+
+![FFT of waveform](https://github.com/drtonyr/MSF60decoder/raw/master/img/fft.png)
+
+Good, there is a peak at 60kHz, that's the signal we are after.
+
+Now let's construct a filter to pick out that signal, here is the filter called swindow which is a windowed sine wave:
+
+![swindow](https://github.com/drtonyr/MSF60decoder/raw/master/img/swindow.png)
+
+That's a lot of points, too many to see the sine wave, just its envelope.   So let's look at the firt 64 points:
+
+![swindow64](https://github.com/drtonyr/MSF60decoder/raw/master/img/swindow64.png)
+
+That doesn't look much like a sine wave because it's at 60kHz and the maximum frequency we can represent is 96 kHz, but it is a sine wave and because it repeats so many times it's good at filtering out all the other frequencies present.   So now we can demodulate our original waveform and we get:
+
+![demod](https://github.com/drtonyr/MSF60decoder/raw/master/img/demod.png)
+
+There's defintely some structure there, let's look at the first part:
+
+![demod](https://github.com/drtonyr/MSF60decoder/raw/master/img/demod512.png)
+
+And there we have it, our time signal.  All we need to do now is work out where half way between the bottom floor and top ceiling is and we can thresold and get all the bits out.
+
 ## Extensions
 
 * Cope with ALSA overruns:  At the moment we just hope that they happen at the start of the file
