@@ -46,7 +46,7 @@ There's defintely some structure there, let's look at the first part:
 
 ![demod](https://github.com/drtonyr/MSF60decoder/raw/master/img/demod512.png)
 
-And there we have it, our time signal.  All we need to do now is work out where half way between the bottom floor and top ceiling is and we can thresold and get all the bits out.
+And there we have it, our time signal.  All we need to do now is get the exact timing of the signal (as we have oversampled) and then we can digitise and get all the bits out.
 
 ## sysDiff
 
