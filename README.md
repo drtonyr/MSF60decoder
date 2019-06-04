@@ -8,13 +8,17 @@ There are many ways to decode this signal already out there but all seem to invo
 
 ## Testing install
 
-test.sh just calls MSF60decoder.py on a standard file, test.wav.   You should see: packet: 2019-05-31 13:49    sysDiff +0.5
+test.sh just calls MSF60decoder.py on a standard file, test.wav (after uncompressing it if that hasn't already been done).   You should see: packet: 2019-05-31 13:49    sysDiff -0.03
 
-This is the decoded packet formatted as a date and time plus a rough guess at the difference between radio time and system time (based on the last modified time of the supplied file in seconds).
+This is the decoded packet formatted as a date and time plus a rough guess at the difference between radio time and system time.
 
 ## Recording audio
 
 I have a [Intel DX58SO motherboard](https://ark.intel.com/content/www/us/en/ark/products/36888/intel-desktop-board-dx58so.html) (from 2008!) which has a 82801JI HD Audio Controller, but anything that samples at 192kHz will probably do.  If you haven't got 32bit input you may have a "20dB boost".  You'll probably have to fiddle with both the sox recording line and boosting the kernal prioities of the recording process.  MSF60decoder.sh contains a 'good enough' solution for me, and also has links to documentation.  MSF60decoder.sh also calls MSF60decoder.py, so once you've got everything set up you can call this and decode the time from MSF-60.
+
+## sysDiff
+
+The final field of a packet decode is systemTime (computed from the mtime of the file) minus radioTime (computed from the radio time signal).  Many file systems only store times to a second, in which case you can't expect any better accuracy.   However, if you are running ext4 then you are in luck and you should get 10ms accuracy WHEN I FINISH THIS!!!
 
 ## Signal processing
 
