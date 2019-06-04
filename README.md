@@ -16,10 +16,6 @@ This is the decoded packet formatted as a date and time plus a rough guess at th
 
 I have a [Intel DX58SO motherboard](https://ark.intel.com/content/www/us/en/ark/products/36888/intel-desktop-board-dx58so.html) (from 2008!) which has a 82801JI HD Audio Controller, but anything that samples at 192kHz will probably do.  If you haven't got 32bit input you may have a "20dB boost".  You'll probably have to fiddle with both the sox recording line and boosting the kernal prioities of the recording process.  MSF60decoder.sh contains a 'good enough' solution for me, and also has links to documentation.  MSF60decoder.sh also calls MSF60decoder.py, so once you've got everything set up you can call this and decode the time from MSF-60.
 
-## sysDiff
-
-The final field of a packet decode is systemTime (computed from the mtime of the file) minus radioTime (computed from the radio time signal).  Many file systems only store times to a second, in which case you can't expect any better accuracy.   However, if you are running ext4 then you are in luck and you should get 10ms accuracy WHEN I FINISH THIS!!!
-
 ## Signal processing
 
 So how does MSF60decoder.py work?  Lines marked with ## can be uncommented to show the signal processing steps.  If you do this don't forget to add a 'plt.show()' line so that the plot is displayed.   The plots below come from the supplied test.wav file.
@@ -51,6 +47,10 @@ There's defintely some structure there, let's look at the first part:
 ![demod](https://github.com/drtonyr/MSF60decoder/raw/master/img/demod512.png)
 
 And there we have it, our time signal.  All we need to do now is work out where half way between the bottom floor and top ceiling is and we can thresold and get all the bits out.
+
+## sysDiff
+
+The final field of a packet decode is systemTime (computed from the mtime of the file) minus radioTime (computed from the radio time signal).  Many file systems only store times to a second, in which case you can't expect any better accuracy.   However, if you are running ext4 then you are in luck and you should get 10ms accuracy WHEN I FINISH THIS!!!
 
 ## Extensions
 
