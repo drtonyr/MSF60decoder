@@ -1,6 +1,6 @@
 # MSF-60 decoder
 
-A simple software decoder for the 60kHz NPL time signal (aka MSF)
+A simple software decoder for the 60kHz NPL time signal (aka MSF) accurate to a few tess of milliseconds.
 
 The UK radio time signal is broadcast on 60kHz from Anthorn, Cumbria, UK (see [Time from NPL](https://en.wikipedia.org/wiki/Time_from_NPL_(MSF)))
 
