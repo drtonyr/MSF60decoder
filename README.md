@@ -8,7 +8,7 @@ There are many ways to decode this signal already out there but all seem to invo
 
 ## Testing install
 
-test.sh just calls MSF60decoder.py on a standard file, test.wav (after uncompressing it if that hasn't already been done).   You should see: packet: 2019-05-31 13:49    sysDiff -0.03
+test.sh just calls MSF60decoder.py on a standard file, test.wav (after uncompressing it if that hasn't already been done).   You should see: packet: 2019-05-31 13:49    sysDiff +0.025
 
 This is the decoded packet formatted as a date and time plus a rough guess at the difference between radio time and system time.
 
@@ -50,7 +50,7 @@ And there we have it, our time signal.  All we need to do now is get the exact t
 
 ## sysDiff
 
-The final field of a packet decode is systemTime (computed from the mtime of the file) minus radioTime (computed from the radio time signal).  Many file systems only store times to a second, in which case you can't expect any better accuracy than a second.  However, if you are running ext4 then you are in luck and you should get 10ms accuracy WHEN I FINISH THIS!!!
+The final field of a packet decode is systemTime (computed from the mtime of the file) minus radioTime (computed from the radio time signal).  Many file systems only store times to a second, in which case you can't expect any better accuracy than a second.  However, if you are running ext4 then you are in luck and you should get the time to at least 0.1s.
 
 ## Extensions
 
