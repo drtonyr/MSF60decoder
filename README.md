@@ -54,7 +54,7 @@ The final field of a packet decode is systemTime (computed from the mtime of the
 
 ## Extensions
 
-* Filter the input signal so as to remove all the low frequecny power, which should improve the SNR and hence error rate.  A simple y(t) = x(t) - x(t-1) is probably all that is needed.
+* Filter the input signal so as to remove all the low frequency power, which should improve the SNR and hence error rate.  A simple y(t) = x(t) - x(t-1) is probably all that is needed.
 
 * Mearure the SNR more accurately:  At the moment approxSNR is reported prior to decoding the signal.  After decoding we know what all the bits are, so we can measure it exactly: SNR = 10 log10(meanPowerCarrierOn / meanPowerCarrierOff).
 
